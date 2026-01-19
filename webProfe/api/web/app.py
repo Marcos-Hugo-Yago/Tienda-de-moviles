@@ -12,8 +12,8 @@ def create_app():
     from rutas_usuarios import bp as usuarios_bp
     app.register_blueprint(usuarios_bp, url_prefix='/api/usuarios')
 
-    from rutas_chuches import bp as chuches_bp
-    app.register_blueprint(chuches_bp, url_prefix='/api/chuches')
+    from rutas_Moviles import bp as Moviles_bp
+    app.register_blueprint(Moviles_bp, url_prefix='/api/Moviles')
 
     from rutas_ficheros import bp as ficheros_bp
     app.register_blueprint(ficheros_bp, url_prefix='/api/ficheros')

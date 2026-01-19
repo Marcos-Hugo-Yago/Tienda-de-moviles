@@ -19,31 +19,31 @@
         var urlParams = new URLSearchParams(queryString);
         var id = urlParams.get('id');
         onload = function () {
-            obtenerDatosChuche(id);
+            obtenerDatosMovil(id);
         }
-        function obtenerDatosChuche(id) {
+        function obtenerDatosMovil(id) {
             var requestOptions = {
                 method: 'GET',
                 headers: myHeaders
             };
 
-            fetch("/api/chuches/" + id, requestOptions)
+            fetch("/api/Moviles/" + id, requestOptions)
                 .then(response => response.json())
-                .then(result => pintarChuche(result))
+                .then(result => pintarMovil(result))
                 .catch(error => {
                     alert("Ha habido un error al recuperar los datos del libro");
-                    location.href = "chuches.html";
+                    location.href = "moviles.html";
                 });
 
         }
-        function pintarChuche(chuche) {
-            console.log(chuche);
+        function pintarMovil(movil) {
+            console.log(movil);
             
-            document.getElementById("nombre").value = chuche.nombre;
-            document.getElementById("descripcion").value = chuche.descripcion;
-            document.getElementById("ingredientes").value = chuche.ingredientes;
-            document.getElementById("precio").value = chuche.precio;
-            document.getElementById("foto").src = chuche.foto;
+            document.getElementById("nombre").value = movil.nombre;
+            document.getElementById("descripcion").value = movil.descripcion;
+            document.getElementById("ingredientes").value = movil.ingredientes;
+            document.getElementById("precio").value = movil.precio;
+            document.getElementById("foto").src = movil.foto;
         }
 
         function guardar() {
@@ -71,20 +71,20 @@
             console.log(requestOptions);
             
 
-            fetch("/api/chuches/", requestOptions)
+            fetch("/api/Moviles/", requestOptions)
                 .then(response => response.json())
                 .then(result => {
                     
                     if (result.status == "OK") {
-                        alert("chuche modificado")
-                        location.href = "chuches.html"
+                        alert("movil modificado")
+                        location.href = "moviles.html"
                     } else {
-                        alert("La chuche no ha podido ser modificado")
+                        alert("La movil no ha podido ser modificado")
                     }
                 })
                 .catch(error => {
                     console.log('error', error);
-                    alert("Se ha producido un error y la chuche no ha podido ser modificado")
+                    alert("Se ha producido un error y la movil no ha podido ser modificado")
                 });
         }
     </script>
@@ -102,7 +102,7 @@
         </div>
         <div class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="chuches.html">Chuches</a>
+                <a class="navbar-item" href="moviles.html">Móviles</a>
             </div>
             <div class="navbar-end">
                 <div class="navbar-item">
@@ -113,7 +113,7 @@
     <section class="section">
         <div class="columns">
             <div class="column">
-                <h3 class="is-size-3">Editar chuche</h3>
+                <h3 class="is-size-3">Editar Móvil</h3>
                 <label for="nombre">Nombre:</label>
                 <input required type="text" class="input" placeholder="Nombre" name="nombre" id="nombre">
                 <label for="descripcion">Descripcion</label>
@@ -126,7 +126,7 @@
                 <input required type="file" class="input" placeholder="Archivo Foto" name="filefoto" id="filefoto">
                 <img src="#" alt="Foto" width="500" height="600" id="foto">
                 <button type="button" onclick="guardar()" class="button is-success mt-2">Guardar</button>
-                <a href="chuches.html" class="button is-primary mt-2">Volver</a>
+                <a href="moviles.html" class="button is-primary mt-2">Volver</a>
                 </form>
             </div>
         </div>
