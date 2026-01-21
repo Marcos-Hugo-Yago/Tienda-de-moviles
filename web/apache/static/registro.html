@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,51 +9,164 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Last-Modified" content="0">
-    <title>APP PEPS</title>
+    <title>Tienda Móvil - Registro</title>
+
     <style>
-        .error{
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .register-container {
+            background: #fff;
+            width: 100%;
+            max-width: 380px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: #2c5364;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2c5364;
+        }
+
+        input:disabled {
+            background-color: #f3f3f3;
+            color: #666;
+            cursor: not-allowed;
+        }
+
+        .error {
             display: none;
             color: red;
+            font-size: 13px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background-color: #2c5364;
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background-color: #203a43;
+        }
+
+        .btn-back {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        .btn-back:hover {
+            background-color: #d5d5d5;
         }
     </style>
+
     <script>
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
-        function conectar(){
-            document.getElementsByClassName("error")[0].style.display="none";
+        function conectar() {
+            document.getElementsByClassName("error")[0].style.display = "none";
+
             var raw = JSON.stringify({
                 "username": document.getElementById("username").value,
                 "password": document.getElementById("password").value,
                 "profile": document.getElementById("profile").value
             });
 
-            var requestOptions = {
+            fetch("/api/usuarios/registro", {
                 method: 'POST',
                 headers: myHeaders,
                 body: raw
-            };
-
-            fetch("/api/usuarios/registro", requestOptions)
-                .then(response => response.json())
-                .then(result => {
-                    if (result.status=="OK"){
-                        alert("Usuario registrado correctamente");
-                        location.href="index.html";
-                    } else {
-                        document.getElementsByClassName("error")[0].style.display="block";
-                    }
-                })
-                .catch(error => console.log('error', error)); 
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.status == "OK") {
+                    alert("Usuario registrado correctamente");
+                    location.href = "index.html";
+                } else {
+                    document.getElementsByClassName("error")[0].style.display = "block";
+                }
+            })
+            .catch(error => console.log('error', error));
         }
     </script>
 </head>
+
 <body>
-    <h1>REGISTRO DEL SISTEMA</h1>
-    <label>Usuario</label><input type="text" name="username" id="username" required><br>
-    <label>Clave</label><input type="password" name="password" id="password" required><br>
-    <label>Perfil</label><input type="text" disabled name="profile" id="profile" value="normal"><br>
-    <label class="error">Usuario ya existe</label>
-    <button type="button" onclick="conectar()">ENVIAR</button>
+
+    <div class="register-container">
+        <div class="logo">Registro</div>
+        <div class="subtitle">Crea tu cuenta</div>
+
+        <label>Usuario</label>
+        <input type="text" name="username" placeholder="usuario" id="username" required>
+
+        <input type="password" name="password" placeholder="Contraseña" id="password" required>
+
+        <!--
+        <label>Perfil</label>
+        <input type="text" disabled name="profile" id="profile" value="normal">
+    -->
+
+        <label class="error">Usuario ya existe</label>
+
+        <button class="btn-submit" type="button" onclick="conectar()">ENVIAR</button>
+        <button class="btn-back" type="button" onclick="history.back()">Volver</button>
+    </div>
+
 </body>
 </html>
