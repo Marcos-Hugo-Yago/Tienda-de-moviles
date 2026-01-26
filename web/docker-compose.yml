@@ -3,14 +3,12 @@ services:
     image: mariadb
     container_name: mariadb
     restart: always
-    environment:
-      MARIADB_ROOT_PASSWORD: example
-      MARIADB_USER: agente
-      MARIADB_USER_PASSWORD: 0traClave
-      MARIADB_DATABASE: ciber
+    env_file:
+      - ./credenciales
     volumes:
       - mariadb_data:/var/lib/mysql
       - ./moviles.sql://docker-entrypoint-initdb.d/moviles.sql:ro
+
   phpmyadmin:
     image: phpmyadmin
     container_name: phpmyadmin
@@ -21,26 +19,23 @@ services:
       - 9093:80
     depends_on:
       - mariadb
+
   python:
     build: ./api
     container_name: python
-    environment:
-      DB_USERNAME: root
-      DB_PASSWORD: example
-      DB_DATABASE: ciber
-      DB_HOST: mariadb
-      DB_PORT: 3306
-      PORT: 8080
-      HOST: 0.0.0.0
+    env_file:
+      - ./credenciales
     depends_on:
       - mariadb
+
   apache-waf:
-    build: ./apache #./waf/ en un futuro
+    build: ./apache
     ports:
       - 9090:80
     depends_on:
       - python
     links:
       - python
+
 volumes:
   mariadb_data:
