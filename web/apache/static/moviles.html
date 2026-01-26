@@ -27,8 +27,8 @@
                         <td>${movil.nombre}</td>
                         <td>${movil.descripcion}</td>
                         <td>${movil.ingredientes}</td>
-                        <td>${movil.precio}</td>
-                        <td>${movil.precio}</td>
+                        <td>${movil.precio} €</td>
+                        <td>${(movil.precio * 1.21).toFixed(2)} € </td>
                         <td>`
                 texto+=`<a href="editar_movil.html?id=${movil.id}" class="button is-info">Editar</a>
                         </td>
