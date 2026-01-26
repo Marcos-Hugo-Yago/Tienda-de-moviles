@@ -5,24 +5,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EJEMPLO APP WEB CON CRUD</title>
+
+    <!-- Bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+
     <style>
-        .oculto{
+        /* Base común con el resto de la app */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .oculto {
             display: none;
         }
+
+        /* Navbar */
+        .navbar {
+            background-color: #2c5364;
+        }
+
+        .navbar .navbar-item,
+        .navbar .navbar-burger {
+            color: #fff;
+        }
+
+        .navbar .navbar-item:hover {
+            background-color: #203a43;
+            color: #fff;
+        }
+
+        /* Contenedor principal */
+        .main-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        h3 {
+            color: #2c5364;
+            margin-bottom: 15px;
+        }
+
+        /* Botón agregar */
+        #enlaceAgregar {
+            background-color: #2c5364;
+            color: white;
+        }        
+
+        /* Tabla */
+        table {
+            margin-top: 15px;
+        }
+
+        thead {
+            background-color: #f5f5f5;
+        }
+
+        thead th {
+            font-weight: bold;
+            color: #333;
+        }
+
+        tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        img {
+            border-radius: 6px;
+        }
     </style>
+
     <script>
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-        onload=function(){
+
+        onload = function () {
             pedirMoviles();
         }
-        function pintarMoviles(lista){
-            let tbody=document.getElementsByTagName("tbody")[0];
-            tbody.innerText="";
+
+        function pintarMoviles(lista) {
+            let tbody = document.getElementsByTagName("tbody")[0];
+            tbody.innerText = "";
 
             lista.forEach(movil => {
-                let texto=`<tr>
+                let texto = `<tr>
                         <td><img src="${movil.foto}" width="70"></td>
                         <td>${movil.nombre}</td>
                         <td>${movil.descripcion}</td>
@@ -33,94 +106,85 @@
                 texto+=`<a href="editar_movil.html?id=${movil.id}" class="button is-info">Editar</a>
                         </td>
                         <td>
-                            <button class="button is-danger" onclick="eliminarMovil(${movil.id})">Eliminar</button>
-                        </td>`
-                texto+=`</tr>`;
-                tbody.innerHTML+=texto                            
+                            <button class="button is-danger is-small" onclick="eliminarMovil(${movil.id})">Eliminar</button>
+                        </td>
+                    </tr>`;
+                tbody.innerHTML += texto;
             });
         }
-        function pedirMoviles(){
-            var requestOptions = {
-                method: 'GET',
-                headers: myHeaders,
-            };
 
-            fetch("/api/Moviles/", requestOptions)
-                .then(response => response.json())
-                .then(result => {
-                    console.log(result);
-                    pintarMoviles(result);
-                })
-                .catch(error => {
-                    console.log('error', error);
-                    alert("Ha habido un error al recuperar las moviles. Refresque la página")
-                });
-        }
-        function eliminarMovil(id){
-            var requestOptions = {
-                method: 'DELETE',
-                headers: myHeaders,
-            };
-
-            fetch("/api/Moviles/"+id, requestOptions)
-                .then(response => response.json())
-                .then(result => {
-                    if (result.status == "OK"){
-                        alert("Móvil eliminado")
-                        pedirMoviles();
-                    } else {
-                        alert("La movil no ha podido ser eliminada")
-                    }
-                })
-                .catch(error => {
-                    console.log('error', error);
-                    alert("Se ha producido un error y la movil no ha podido ser eliminado")
-                });
-        }
-        function cerrarSesion(){
-            var requestOptions = {
+        function pedirMoviles() {
+            fetch("/api/Moviles/", {
                 method: 'GET',
                 headers: myHeaders
-            };
-            fetch("/api/usuarios/logout", requestOptions)
-                .then(response => response.json())
-                .then(result => {
-                    if (result.status == "OK"){
-                        location.href="index.html";
-                    } else {
-                        alert("No se ha podido cerrar sesión")
-                    }
-                })
-                .catch(error => {
-                    console.log('error', error);
-                    alert("Se ha producido un error y no se ha podido cerrar sesión")
-                });
+            })
+            .then(response => response.json())
+            .then(result => pintarMoviles(result))
+            .catch(error => {
+                console.log('error', error);
+                alert("Ha habido un error al recuperar las moviles. Refresque la página")
+            });
+        }
 
+        function eliminarMovil(id) {
+            fetch("/api/Moviles/" + id, {
+                method: 'DELETE',
+                headers: myHeaders
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.status == "OK") {
+                    alert("Móvil eliminado");
+                    pedirMoviles();
+                } else {
+                    alert("La movil no ha podido ser eliminada");
+                }
+            })
+            .catch(error => {
+                console.log('error', error);
+                alert("Se ha producido un error y la movil no ha podido ser eliminado");
+            });
+        }
+
+        function cerrarSesion() {
+            fetch("/api/usuarios/logout", {
+                method: 'GET',
+                headers: myHeaders
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.status == "OK") {
+                    location.href = "index.html";
+                } else {
+                    alert("No se ha podido cerrar sesión");
+                }
+            })
+            .catch(error => {
+                console.log('error', error);
+                alert("Se ha producido un error y no se ha podido cerrar sesión");
+            });
         }
     </script>
 </head>
+
 <body>
-    <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <button class="navbar-burger is-warning button" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </button>
+            <span class="navbar-item has-text-weight-bold">
+                Tienda de Móviles
+            </span>
         </div>
+
         <div class="navbar-menu">
             <div class="navbar-start">
                 <a class="navbar-item" href="moviles.html">Móviles</a>
                 <a class="navbar-item" href="ficheros.html">Archivos</a>
-                <a class="navbar-item" href="javascript:cerrarSesion()">Cerrar sesion</a>
-            </div>
-            <div class="navbar-end">
-                <div class="navbar-item">
-                </div>
+                <a class="navbar-item" href="javascript:cerrarSesion()">Cerrar sesión</a>
             </div>
         </div>
     </nav>
+
     <section class="section">
         <div class="columns">
             <div class="column">
@@ -143,7 +207,8 @@
                    </tbody>
                 </table>
             </div>
-        </div>  
-    </section>    
+        </div>
+    </section>
+
 </body>
 </html>
