@@ -1,28 +1,29 @@
 services:
   mariadb:
     image: mariadb
-    container_name: mariadb
-    restart: always
+    container_name: mariadb5
+    restart: unless-stopped
     env_file:
       - ./credenciales
     volumes:
-      - mariadb_data:/var/lib/mysql
-      - ./moviles.sql://docker-entrypoint-initdb.d/moviles.sql:ro
+      - mariadb-datab5:/var/lib/mysql
+      - ./moviles.sql:/docker-entrypoint-initdb.d/moviles.sql:ro
 
   phpmyadmin:
     image: phpmyadmin
-    container_name: phpmyadmin
-    restart: always
+    container_name: phpmyadminb5
+    restart: unless-stopped
     environment:
-      - PMA_HOST=mariadb
+      - PMA_HOST=mariadb5b
     ports:
-      - 9093:80
+      - "7105:80"
     depends_on:
       - mariadb
 
   python:
     build: ./api
-    container_name: python
+    container_name: pythonb5
+    restart: unless-stopped
     env_file:
       - ./credenciales
     depends_on:
@@ -30,12 +31,14 @@ services:
 
   apache-waf:
     build: ./apache
+    container_name: apacheb5
+    restart: unless-stopped
     ports:
-      - 9090:80
+      - "6105:80"
     depends_on:
       - python
     links:
       - python
 
 volumes:
-  mariadb_data:
+  mariadb-datab5:
