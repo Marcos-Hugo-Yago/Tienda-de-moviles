@@ -10,6 +10,51 @@
     <meta http-equiv="Last-Modified" content="0">
     <title>EJEMPLO APP apache CON CRUD</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <style>
+        /* Base común con el resto de la app */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #2c5364;
+        }
+
+        .navbar .navbar-item,
+        .navbar .navbar-burger {
+            color: #fff;
+        }
+
+        .navbar .navbar-item:hover {
+            background-color: #203a43;
+            color: #fff;
+        }
+
+        /* Contenedor principal */
+        .main-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        h3 {
+            color: #2c5364;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #4a4a4a;
+        }
+    </style>
     <script>
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -50,9 +95,12 @@
     </script>
 </head>
 <body>
-    <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <button class="navbar-burger is-warning button" aria-label="menu" aria-expanded="false"
+            <span class="navbar-item has-text-weight-bold">
+                Tienda de Móviles
+            </span>
+            <button class="navbar-burger button" aria-label="menu" aria-expanded="false"
                 data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -70,23 +118,58 @@
         </div>
     </nav>
   <section class="section">
-    <div class="columns">
-        <div class="column">
-            <h3 class="is-size-3">Agregar Móvil</h3>
-                <label for="nombre">Nombre:</label>
-                <input required type="text" class="input" placeholder="Nombre" name="nombre" id="nombre">
-                <label for="descripcion">Descripcion</label>
-                <input required type="text" class="input" placeholder="Descripcion" name="descripcion" id="descripcion">
-                <label for="ingredientes">Fabricante</label>
-                <input required type="text" class="input" placeholder="Ingredientes" name="ingredientes" id="ingredientes">
-                <label for="precio">Precio</label>
-                <input required type="number" class="input" placeholder="Precio" name="precio" id="precio">
-                <label for="foto">Foto</label>
-                <input required type="text" class="input" placeholder="Foto" name="foto" id="foto">
-                <input required type="file" class="input" placeholder="Archivo Foto" name="filefoto" id="filefoto">
-                <button type="button" onclick="guardar()" class="button is-success mt-2">Guardar</button>
-                <a href="moviles.html" class="button is-primary mt-2">Volver</a>
-            </form>
+    <div class="columns is-centered">
+        <div class="column is-6">
+            <div class="main-card">
+                <h3 class="is-size-3 has-text-centered">Agregar Móvil</h3>
+                <form action="javascript:void(0);">
+                    <div class="field">
+                        <label class="label" for="nombre">Nombre:</label>
+                        <div class="control">
+                            <input required type="text" class="input" placeholder="Nombre del móvil" name="nombre" id="nombre">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="descripcion">Descripción:</label>
+                        <div class="control">
+                            <input required type="text" class="input" placeholder="Breve descripción" name="descripcion" id="descripcion">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="ingredientes">Fabricante:</label>
+                        <div class="control">
+                            <input required type="text" class="input" placeholder="Fabricante" name="ingredientes" id="ingredientes">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="precio">Precio:</label>
+                        <div class="control">
+                            <input required type="number" class="input" placeholder="Precio en €" name="precio" id="precio">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="foto">URL de Foto:</label>
+                        <div class="control">
+                            <input required type="text" class="input" placeholder="http://..." name="foto" id="foto">
+                        </div>
+                    </div>
+                     <div class="field">
+                        <label class="label" for="filefoto">O subir archivo:</label>
+                        <div class="control">
+                            <input type="file" class="input" name="filefoto" id="filefoto">
+                        </div>
+                    </div>
+
+                    <div class="field is-grouped is-grouped-centered mt-5">
+                        <div class="control">
+                            <button type="button" onclick="guardar()" class="button is-success">Guardar</button>
+                        </div>
+                        <div class="control">
+                            <a href="moviles.html" class="button is-light">Volver</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </section>
