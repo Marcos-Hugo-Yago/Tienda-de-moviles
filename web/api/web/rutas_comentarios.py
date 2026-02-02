@@ -14,7 +14,7 @@ def login():
         respuesta,code= controlador_comentarios.insertar_comentario(usuario,descripcion)
     else:
         respuesta={"status":"Bad request"}
-        code=401
+        code=400
     return jsonify(respuesta), code
 
 @bp.route("/",methods=['GET'])

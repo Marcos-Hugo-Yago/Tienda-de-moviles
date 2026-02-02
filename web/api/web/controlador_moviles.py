@@ -45,7 +45,7 @@ def obtener_movil_por_id(id):
     try:
         conexion = obtener_conexion()
         with conexion.cursor() as cursor:
-            cursor.execute("SELECT id, nombre, descripcion, precio,foto,ingredientes FROM Moviles WHERE id =" + id)
+            cursor.execute("SELECT id, nombre, descripcion, precio,foto,ingredientes FROM Moviles WHERE id = %s", (id,))
             movil = cursor.fetchone()
             if movil is not None:
                 moviljson = convertir_movil_a_json(movil)

@@ -27,7 +27,7 @@ def guardar_movil():
         respuesta,code=controlador_moviles.insertar_movil(nombre, descripcion,precio,foto,ingredientes)
     else:
         respuesta={"status":"Bad request"}
-        code=401
+        code=400
     return jsonify(respuesta), code
 
 @bp.route("/<int:id>", methods=["DELETE"])
@@ -49,6 +49,6 @@ def actualizar_movil():
         respuesta,code=controlador_moviles.actualizar_movil(id,nombre,descripcion,precio,foto,ingredientes)
     else:
         respuesta={"status":"Bad request"}
-        code=401
+        code=400
     return jsonify(respuesta), code
 

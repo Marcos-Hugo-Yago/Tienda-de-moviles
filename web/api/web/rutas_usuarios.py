@@ -15,7 +15,7 @@ def login():
         respuesta,code= controlador_usuarios.login_usuario(username,password)
     else:
         respuesta={"status":"Bad request"}
-        code=401
+        code=400
     return jsonify(respuesta), code
 
 @bp.route("/registro",methods=['POST'])
@@ -29,7 +29,7 @@ def registro():
         respuesta,code= controlador_usuarios.alta_usuario(username,password,profile)
     else:
         respuesta={"status":"Bad request"}
-        code=401
+        code=400
     return jsonify(respuesta), code
 
 
