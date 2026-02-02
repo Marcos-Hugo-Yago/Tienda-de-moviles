@@ -11,115 +11,7 @@
     <meta http-equiv="Last-Modified" content="0">
     <title>Tienda Móvil - Iniciar sesión</title>
 
-    <style>
-        /* 🔑 Clave para que todo alinee correctamente */
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #333;
-        }
-
-        .login-container {
-            background: #fff;
-            width: 100%;
-            max-width: 380px;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-            text-align: center;
-        }
-
-        .logo {
-            font-size: 32px;
-            font-weight: bold;
-            color: #2c5364;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 14px;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: #2c5364;
-        }
-
-        .error {
-            display: none;
-            color: red;
-            font-size: 13px;
-            margin-bottom: 10px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            font-size: 15px;
-            cursor: pointer;
-        }
-
-        .btn-login {
-            background-color: #2c5364;
-            color: white;
-        }
-
-        .btn-login:hover {
-            background-color: #203a43;
-        }
-
-        .btn-register {
-            background-color: #e0e0e0;
-        }
-
-        .btn-register:hover {
-            background-color: #d5d5d5;
-        }
-
-        .extra-section {
-            margin-top: 25px;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-        }
-
-        .extra-section h3 {
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: #2c5364;
-        }
-
-        .btn-comments {
-            background-color: #4caf50;
-            color: white;
-        }
-
-        .btn-comments:hover {
-            background-color: #449d48;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 
     <script>
         var myHeaders = new Headers();
@@ -142,36 +34,38 @@
                 headers: myHeaders,
                 body: raw
             })
-            .then(response => response.json())
-            .then(result => {
-                if (result.status === "OK") {
-                    location.href = "moviles.html";
-                } else {
-                    document.getElementsByClassName("error")[0].style.display = "block";
-                }
-            })
-            .catch(error => console.log('error', error));
+                .then(response => response.json())
+                .then(result => {
+                    if (result.status === "OK") {
+                        location.href = "moviles.html";
+                    } else {
+                        document.getElementsByClassName("error")[0].style.display = "block";
+                    }
+                })
+                .catch(error => console.log('error', error));
         }
     </script>
 </head>
 
 <body>
 
-    <div class="login-container">
-        <div class="logo">Tienda de Móviles</div>
-        <div class="subtitle">Accede a tu cuenta para ver nuestro catálogo</div>
+    <div class="login-wrapper">
+        <div class="login-container">
+            <div class="logo">Tienda de Móviles</div>
+            <div class="subtitle">Accede a tu cuenta para ver nuestro catálogo</div>
 
-        <input type="text" id="username" name="username" placeholder="Usuario">
-        <input type="password" id="password" name="password" placeholder="Contraseña">
+            <input type="text" id="username" name="username" placeholder="Usuario">
+            <input type="password" id="password" name="password" placeholder="Contraseña">
 
-        <div class="error">Usuario/clave errónea</div>
+            <div class="error">Usuario/clave errónea</div>
 
-        <button class="btn-login" type="button" onclick="conectar()">Iniciar sesión</button>
-        <button class="btn-register" type="button" onclick="location.href='registro.html'">Registrarse</button>
+            <button class="btn-login" type="button" onclick="conectar()">Iniciar sesión</button>
+            <button class="btn-register" type="button" onclick="location.href='registro.html'">Registrarse</button>
 
-        <div class="extra-section">
-            <h3>Opiniones de clientes</h3>
-            <button class="btn-login" type="button" onclick="verComentarios()">Ver comentarios</button>
+            <div class="extra-section">
+                <h3>Opiniones de clientes</h3>
+                <button class="btn-login" type="button" onclick="verComentarios()">Ver comentarios</button>
+            </div>
         </div>
     </div>
 

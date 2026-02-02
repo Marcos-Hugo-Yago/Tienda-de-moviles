@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Last-Modified" content="0">
     <title>EJEMPLO APP apache CON CRUD</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script>
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -31,35 +31,34 @@
                 .then(response => response.json())
                 .then(result => pintarMovil(result))
                 .catch(error => {
-                    alert("Ha habido un error al recuperar los datos del libro");
+                    alert("Ha habido un error al recuperar los datos del móvil");
                     location.href = "moviles.html";
                 });
 
         }
         function pintarMovil(movil) {
             console.log(movil);
-            
+
             document.getElementById("nombre").value = movil.nombre;
             document.getElementById("descripcion").value = movil.descripcion;
             document.getElementById("ingredientes").value = movil.ingredientes;
             document.getElementById("precio").value = movil.precio;
-            document.getElementById("foto").src = movil.foto;
+            document.getElementById("fotoUrl").value = movil.foto;
+            document.getElementById("fotoPreview").src = movil.foto;
         }
 
         function guardar() {
             let nombre = document.getElementById("nombre").value;
-            let descripcion= document.getElementById("descripcion").value;
+            let descripcion = document.getElementById("descripcion").value;
             let ingredientes = document.getElementById("ingredientes").value;
             let precio = document.getElementById("precio").value;
-           // let precioIVA = document.getElementById("precioIVA").value;
-            let foto = document.getElementById("foto").value;
+            let foto = document.getElementById("fotoUrl").value;
             let datos = JSON.stringify({
                 "id": id,
                 "nombre": nombre,
                 "descripcion": descripcion,
                 "ingredientes": ingredientes,
                 "precio": precio,
-              //  "precioIVA": precioIVA,
                 "foto": foto
             });
             var requestOptions = {
@@ -68,69 +67,82 @@
                 body: datos
             };
 
-            console.log(requestOptions);
-            
-
             fetch("/api/Moviles/", requestOptions)
                 .then(response => response.json())
                 .then(result => {
-                    
+
                     if (result.status == "OK") {
-                        alert("movil modificado")
+                        alert("Móvil modificado")
                         location.href = "moviles.html"
                     } else {
-                        alert("La movil no ha podido ser modificado")
+                        alert("El móvil no ha podido ser modificado")
                     }
                 })
                 .catch(error => {
                     console.log('error', error);
-                    alert("Se ha producido un error y la movil no ha podido ser modificado")
+                    alert("Se ha producido un error y el móvil no ha podido ser modificado")
                 });
         }
     </script>
 </head>
 
 <body>
-    <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <button class="navbar-burger is-warning button" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </button>
+            <span class="navbar-item has-text-weight-bold">
+                Tienda de Móviles
+            </span>
         </div>
         <div class="navbar-menu">
             <div class="navbar-start">
                 <a class="navbar-item" href="moviles.html">Móviles</a>
             </div>
-            <div class="navbar-end">
-                <div class="navbar-item">
-                </div>
-            </div>
         </div>
     </nav>
-    <section class="section">
-        <div class="columns">
-            <div class="column">
-                <h3 class="is-size-3">Editar Móvil</h3>
-                <label for="nombre">Nombre:</label>
-                <input required type="text" class="input" placeholder="Nombre" name="nombre" id="nombre">
-                <label for="descripcion">Descripcion</label>
-                <input required type="text" class="input" placeholder="Descripcion" name="descripcion" id="descripcion">
-                <label for="ingredientes">Ingredientes</label>
-                <input required type="text" class="input" placeholder="Ingredientes" name="ingredientes" id="ingredientes">
-                <label for="precio">Precio</label>
-                <input required type="number" class="input" placeholder="Precio" name="precio" id="precio">
-                <input required type="text" class="input" placeholder="Foto" name="foto" id="foto">                
-                <input required type="file" class="input" placeholder="Archivo Foto" name="filefoto" id="filefoto">
-                <img src="#" alt="Foto" width="500" height="600" id="foto">
-                <button type="button" onclick="guardar()" class="button is-success mt-2">Guardar</button>
-                <a href="moviles.html" class="button is-primary mt-2">Volver</a>
-                </form>
-            </div>
+    <div class="container main-content">
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+            <h3 style="text-align: center; margin-bottom: 25px;">Editar Móvil</h3>
+            <form action="javascript:void(0);">
+                <div class="field">
+                    <label for="nombre">Nombre:</label>
+                    <input required type="text" placeholder="Nombre" name="nombre" id="nombre">
+                </div>
+                <div class="field">
+                    <label for="descripcion">Descripción:</label>
+                    <input required type="text" placeholder="Descripcion" name="descripcion" id="descripcion">
+                </div>
+                <div class="field">
+                    <label for="ingredientes">Fabricante/Ingredientes:</label>
+                    <input required type="text" placeholder="Ingredientes" name="ingredientes" id="ingredientes">
+                </div>
+                <div class="field">
+                    <label for="precio">Precio:</label>
+                    <input required type="number" placeholder="Precio" name="precio" id="precio">
+                </div>
+                <div class="field">
+                    <label for="fotoUrl">URL Foto:</label>
+                    <input required type="text" placeholder="Foto URL" name="foto" id="fotoUrl"
+                        onchange="document.getElementById('fotoPreview').src = this.value">
+                </div>
+                <div class="field">
+                    <label>Vista Previa:</label>
+                    <img src="#" alt="Foto"
+                        style="max-width: 100%; max-height: 300px; display: block; margin: 0 auto; border-radius: 8px;"
+                        id="fotoPreview">
+                </div>
+                <div class="field">
+                    <label for="filefoto">O cambiar archivo:</label>
+                    <input type="file" placeholder="Archivo Foto" name="filefoto" id="filefoto"
+                        style="border: none; background: transparent; padding-left: 0;">
+                </div>
+
+                <div class="field" style="display: flex; gap: 10px; justify-content: center; margin-top: 30px;">
+                    <button type="button" onclick="guardar()" class="button is-success">Guardar</button>
+                    <a href="moviles.html" class="button" style="background-color: #f0f0f0; color: #333;">Volver</a>
+                </div>
+            </form>
         </div>
-    </section>
+    </div>
 </body>
 
 </html>

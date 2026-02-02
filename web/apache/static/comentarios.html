@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Last-Modified" content="0">
-    <title>EJEMPLO APP WEB CON CRUD</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-    <style>
-        .oculto{
-            display: none;
-        }
-    </style>
+    <title>Comentarios</title>
+    <link rel="stylesheet" href="css/styles.css">
     <script>
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-        onload=function(){
+        onload = function () {
             pedirComentarios();
         }
         function guardarComentario() {
@@ -36,8 +32,10 @@
             fetch("/api/comentarios/", requestOptions)
                 .then(response => response.json())
                 .then(result => {
-                    if (result.status == "OK"){
+                    if (result.status == "OK") {
                         alert(`Comentario almacenado`);
+                        document.getElementById("usuario").value = "";
+                        document.getElementById("descripcion").value = "";
                         pedirComentarios();
                     } else {
                         alert(`El comentario no ha podio almacenarse`)
@@ -45,20 +43,19 @@
                 })
                 .catch(error => console.log('error', error));
         }
-        function pintarComentarios(lista){
-            let tbody=document.getElementsByTagName("tbody")[0];
-            tbody.innerText="";
+        function pintarComentarios(lista) {
+            let tbody = document.getElementsByTagName("tbody")[0];
+            tbody.innerText = "";
 
             lista.forEach(comentario => {
-                let texto=`<tr>
+                let texto = `<tr>
                         <td>${comentario.usuario}</td>
                         <td>${comentario.descripcion}</td>
-                        <td>
                         </tr>`;
-                tbody.innerHTML+=texto                            
+                tbody.innerHTML += texto
             });
         }
-        function pedirComentarios(){
+        function pedirComentarios() {
             var requestOptions = {
                 method: 'GET',
                 headers: myHeaders,
@@ -67,7 +64,7 @@
             fetch("/api/comentarios/", requestOptions)
                 .then(response => response.json())
                 .then(result => {
-                    if (result){
+                    if (result) {
                         pintarComentarios(result);
                     }
                 })
@@ -79,11 +76,25 @@
 
     </script>
 </head>
+
 <body>
-    <section class="section">
-        <div class="columns">
-            <div class="column">
-                <h3 class="is-size-3">Comentarios</h3>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <span class="navbar-item has-text-weight-bold">
+                Tienda de Móviles
+            </span>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="index.html">Volver al Inicio</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div class="card mb-4">
+            <h3 class="is-size-3">Comentarios</h3>
+            <div class="table-container">
                 <table class="table">
                     <thead>
                         <tr>
@@ -92,19 +103,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                   </tbody>
+                    </tbody>
                 </table>
             </div>
-        </div>  
-    </section>   
-            <h3 class="is-size-3">Agregar Comentario</h3>
-                <label for="usuario">Usuario:</label>
-                <input required type="text" class="input" placeholder="usuario" name="usuario" id="usuario">
-                <label for="descripcion">Descripcion:</label>
-                <input required type="text" class="input" placeholder="Comentario" name="descripcion" id="descripcion">
-                <button type="button" onclick="guardarComentario()" class="button is-success mt-2">Guardar</button>
+        </div>
 
-        </div>  
-    </section>    
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+            <h3 class="is-size-3" style="text-align: center;">Agregar Comentario</h3>
+            <form action="javascript:void(0);">
+                <div class="field">
+                    <label for="usuario">Usuario:</label>
+                    <input required type="text" placeholder="Tu nombre" name="usuario" id="usuario">
+                </div>
+                <div class="field">
+                    <label for="descripcion">Comentario:</label>
+                    <input required type="text" placeholder="Escribe tu opinión..." name="descripcion" id="descripcion">
+                </div>
+                <div class="field" style="text-align: center; margin-top: 20px;">
+                    <button type="button" onclick="guardarComentario()" class="button is-success">Guardar
+                        Comentario</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
