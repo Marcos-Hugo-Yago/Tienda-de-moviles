@@ -8,6 +8,8 @@ services:
     volumes:
       - mariadb-datab5:/var/lib/mysql
       - ./moviles.sql:/docker-entrypoint-initdb.d/moviles.sql:ro
+    networks:
+      - grupob5_network
 
   phpmyadmin:
     image: phpmyadmin
@@ -19,6 +21,8 @@ services:
       - "7105:80"
     depends_on:
       - mariadb
+    networks:
+      - grupob5_network
 
   python:
     build: ./api
@@ -28,6 +32,8 @@ services:
       - ./credenciales
     depends_on:
       - mariadb
+    networks:
+      - grupob5_network
 
   apache-waf:
     build: ./apache
@@ -39,6 +45,13 @@ services:
       - python
     links:
       - python
+    networks:
+      - grupob5_network
 
 volumes:
   mariadb-datab5:
+
+networks:
+  grupob5_network:
+    name: grupob5_network
+    driver: bridge
