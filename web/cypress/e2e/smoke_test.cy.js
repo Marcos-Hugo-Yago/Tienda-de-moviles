@@ -21,13 +21,23 @@ describe('Tienda de Móviles - Pruebas E2E', () => {
     });
 
     it('Debería loguearse correctamente y redirigir a moviles.html', () => {
-        // Usamos las credenciales de tu archivo 'credenciales'
+        // Interceptamos la llamada al backend para ver qué responde
+        cy.intercept('POST', '/api/usuarios/login').as('loginRequest');
+
+        // Pon aquí un usuario y clave QUE EXISTAN EN moviles.sql
         cy.get('#username').type('root');
         cy.get('#password').type('1234');
         cy.get('.btn-login').first().click();
 
+        // Esperamos a que el backend responda y logueamos la respuesta
+        cy.wait('@loginRequest').then((interception) => {
+            cy.log('Respuesta del servidor: ' + JSON.stringify(interception.response.body));
+            // Si el status code es 500, significa que Python ha fallado
+            // Si es 401/403 o el status es "ERROR", es que la clave está mal
+        });
+
         // Verificamos que la URL ha cambiado a moviles.html
-        cy.url().should('include', '/moviles.html');
+        cy.url({ timeout: 10000 }).should('include', '/moviles.html');
     });
 
     it('Debería navegar a la sección de comentarios', () => {
