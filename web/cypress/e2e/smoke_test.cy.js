@@ -23,7 +23,7 @@ describe('Tienda de Móviles - Pruebas E2E', () => {
     it('Debería loguearse correctamente y redirigir a moviles.html', () => {
         // Usamos las credenciales de tu archivo 'credenciales'
         cy.get('#username').type('root');
-        cy.get('#password').type('example');
+        cy.get('#password').type('1234');
         cy.get('.btn-login').first().click();
 
         // Verificamos que la URL ha cambiado a moviles.html
