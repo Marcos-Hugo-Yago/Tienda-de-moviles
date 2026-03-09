@@ -37,6 +37,8 @@ describe('Tienda de Móviles - Pruebas E2E', () => {
 
         // 4. Verificamos la redirección (debería ser instantánea)
         cy.url().should('include', '/moviles.html');
+
+        cy.screenshot('evidencia-login-ok');
     });
 
     it('Debería navegar a la sección de comentarios', () => {
