@@ -18,25 +18,24 @@ describe('Tienda de Móviles - Pruebas E2E', () => {
     });
 
     it('Debería loguearse y navegar a la sección de comentarios', () => {
-        // 1. INTERCEPTAMOS LA LLAMADA (Login mockeado)
-        cy.intercept('POST', '/api/usuarios/login', {
-            statusCode: 200,
-            body: { status: 'OK' }
-        }).as('loginFalso');
+        // 1. Ir explícitamente a la página de inicio o de login
+        cy.visit('/'); // Cámbialo a '/login.html' si tu login está en otra URL
 
-        // 2. HACEMOS LOGIN
-        cy.get('#username').type('root');
-        cy.get('#password').type('1234');
+        // 2. Hacer un login REAL (Asegúrate de poner credenciales que existan en tu BD)
+        cy.get('#username').clear().type('root');
+        cy.get('#password').clear().type('example'); // <-- Usa la contraseña correcta de tu BD
         cy.get('.btn-login').first().click();
 
-        // 3. ESPERAMOS Y COMPROBAMOS QUE ESTAMOS EN MÓVILES
-        cy.wait('@loginFalso');
+        // 3. Comprobar que hemos entrado a la tienda
         cy.url().should('include', '/moviles.html');
-        cy.screenshot('evidencia-login-ok'); // Primera foto
+        cy.screenshot('evidencia-login-ok');
 
-        // 4. COMO SEGUIMOS EN LA MISMA SESIÓN, NAVEGAMOS A COMENTARIOS
-        cy.contains('Ver comentarios').click();
+        // 4. Esperar a que el botón sea visible y hacer click
+        // Usamos should('be.visible') para asegurarnos de que no esté oculto
+        cy.contains('Ver comentarios').should('be.visible').click();
+        
+        // 5. Comprobar la navegación final
         cy.url().should('include', '/comentarios.html');
-        cy.screenshot('evidencia-comentarios'); // Segunda foto
+        cy.screenshot('evidencia-comentarios');
     });
 });
