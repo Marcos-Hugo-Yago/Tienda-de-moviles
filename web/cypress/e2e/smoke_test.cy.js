@@ -17,33 +17,26 @@ describe('Tienda de Móviles - Pruebas E2E', () => {
         cy.get('.error').should('be.visible').and('contain', 'Usuario/clave errónea');
     });
 
-    it('Debería loguearse correctamente y redirigir a moviles.html', () => {
+    it('Debería loguearse y navegar a la sección de comentarios', () => {
+        // 1. INTERCEPTAMOS LA LLAMADA (Login mockeado)
         cy.intercept('POST', '/api/usuarios/login', {
             statusCode: 200,
             body: { status: 'OK' }
         }).as('loginFalso');
 
+        // 2. HACEMOS LOGIN
         cy.get('#username').type('root');
         cy.get('#password').type('1234');
         cy.get('.btn-login').first().click();
 
+        // 3. ESPERAMOS Y COMPROBAMOS QUE ESTAMOS EN MÓVILES
         cy.wait('@loginFalso');
         cy.url().should('include', '/moviles.html');
-        
-        // EVIDENCIA 1: Captura del login exitoso
-        cy.screenshot('evidencia-login-ok');
-    });
+        cy.screenshot('evidencia-login-ok'); // Primera foto
 
-    it('Debería navegar a la sección de comentarios', () => {
-        // CAMBIO: Navegamos primero a la página que contiene el botón.
-        // (Si moviles.html te bloquea por no estar logueado, tendrás que 
-        // repetir el código de login mockeado del paso anterior aquí).
-        cy.visit('/moviles.html'); 
-        
+        // 4. COMO SEGUIMOS EN LA MISMA SESIÓN, NAVEGAMOS A COMENTARIOS
         cy.contains('Ver comentarios').click();
         cy.url().should('include', '/comentarios.html');
-        
-        // CAMBIO: EVIDENCIA 2: Captura de la pantalla de comentarios
-        cy.screenshot('evidencia-comentarios'); 
+        cy.screenshot('evidencia-comentarios'); // Segunda foto
     });
 });
