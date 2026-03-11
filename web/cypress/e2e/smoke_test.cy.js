@@ -23,7 +23,7 @@ describe('Tienda de Móviles - Pruebas E2E', () => {
 
         // 2. Hacer un login REAL (Asegúrate de poner credenciales que existan en tu BD)
         cy.get('#username').clear().type('root');
-        cy.get('#password').clear().type('example'); // <-- Usa la contraseña correcta de tu BD
+        cy.get('#password').clear().type('1234'); // <-- Usa la contraseña correcta de tu BD
         cy.get('.btn-login').first().click();
 
         // 3. Comprobar que hemos entrado a la tienda
