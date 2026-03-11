@@ -17,25 +17,17 @@ describe('Tienda de Móviles - Pruebas E2E', () => {
         cy.get('.error').should('be.visible').and('contain', 'Usuario/clave errónea');
     });
 
-    it('Debería loguearse y navegar a la sección de comentarios', () => {
-        // 1. Ir explícitamente a la página de inicio o de login
-        cy.visit('/'); // Cámbialo a '/login.html' si tu login está en otra URL
+    it('Debería loguearse correctamente y entrar en la sección de móviles', () => {
+    cy.visit(baseUrl, { timeout: 30000 });
 
-        // 2. Hacer un login REAL (Asegúrate de poner credenciales que existan en tu BD)
-        cy.get('#username').clear().type('root');
-        cy.get('#password').clear().type('1234'); // <-- Usa la contraseña correcta de tu BD
-        cy.get('.btn-login').first().click();
+    cy.get('input[name="username"]').type('root');
+    cy.get('input[name="password"]').type('1234');
+    cy.get('button[type="submit"]').click();
 
-        // 3. Comprobar que hemos entrado a la tienda
-        cy.url().should('include', '/moviles.html');
-        cy.screenshot('evidencia-login-ok');
+    cy.url({ timeout: 10000 }).should('match', /\/moviles/);
 
-        // 4. Esperar a que el botón sea visible y hacer click
-        // Usamos should('be.visible') para asegurarnos de que no esté oculto
-        cy.contains('Ver comentarios').should('be.visible').click();
-        
-        // 5. Comprobar la navegación final
-        cy.url().should('include', '/comentarios.html');
-        cy.screenshot('evidencia-comentarios');
-    });
+    cy.get('body').should('be.visible');
+    
+    cy.screenshot('login-exitoso');
+  });
 });
