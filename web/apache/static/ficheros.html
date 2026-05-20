@@ -14,12 +14,24 @@
     <script>
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
+
+        function getCookie(name) {
+            var value = "; " + document.cookie;
+            var parts = value.split("; " + name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        }
+        var csrfToken = getCookie("csrf_token");
+        if (csrfToken) {
+            myHeaders.append("X-CSRFToken", csrfToken);
+        }
+
         function enviarArchivo() {
             const formData = new FormData();
             formData.append('fichero', document.getElementById("fichero").files[0]);
             formData.append('nombre', document.getElementById("nombre").value);
             var requestOptions = {
                 method: 'POST',
+                headers: myHeaders,
                 body: formData
             };
 
@@ -43,12 +55,13 @@
         function verArchivo() {
             var requestOptions = {
                 method: 'GET',
+                headers: myHeaders
             };
 
             fetch("/api/ficheros/" + document.getElementById("nombreArchivo").value, requestOptions)
                 .then(response => response.json())
                 .then(result => {
-                    if (result.status == "OK") {
+                    if (result.contenido != undefined) {
                         document.getElementById("contenidoArchivo").value = result.contenido;
                     } else {
                         document.getElementById("contenidoArchivo").value = "EL CONTENIDO NO ESTÁ DISPONIBLE";

@@ -23,7 +23,7 @@
             var raw = JSON.stringify({
                 "username": document.getElementById("username").value,
                 "password": document.getElementById("password").value,
-                "profile": "normal" // Default profile
+                "correo": document.getElementById("correo").value
             });
 
             fetch("/api/usuarios/registro", {
@@ -54,9 +54,11 @@
 
             <input type="text" name="username" placeholder="Usuario" id="username" required>
 
+            <input type="email" name="correo" placeholder="Correo electrónico" id="correo" required>
+
             <input type="password" name="password" placeholder="Contraseña" id="password" required>
 
-            <div class="error">Usuario ya existe</div>
+            <div class="error">Error al registrar usuario</div>
 
             <button class="btn-primary" type="button" onclick="conectar()">ENVIAR</button>
             <button class="btn-secondary" type="button" onclick="location.href='index.html'"

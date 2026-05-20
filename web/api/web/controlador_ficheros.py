@@ -1,6 +1,5 @@
 from __future__ import print_function
 import os
-import sys
 from werkzeug.utils import secure_filename
 
 
@@ -33,7 +32,6 @@ def ver_fichero(nombre):
         basepath = os.path.dirname(__file__) # ruta del archivo actual
         ruta_fichero = os.path.join (basepath,'static/archivos',nombre_seguro) 
         
-        # Security: Use open() instead of subprocess to prevent RCE
         with open(ruta_fichero, 'r') as f:
             salida = f.read()
             

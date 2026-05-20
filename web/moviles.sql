@@ -16,6 +16,10 @@ CREATE TABLE comentarios(
 CREATE TABLE usuarios(
 	usuario VARCHAR(100) NOT NULL PRIMARY KEY,
     clave VARCHAR(255) NOT NULL,
-    perfil VARCHAR(100) NOT NULL
+    correo VARCHAR(255),
+    perfil VARCHAR(100) NOT NULL,
+    estado VARCHAR(20) DEFAULT 'activo',
+    numeroAccesosErroneo INT DEFAULT 0,
+    fechaUltimoAcceso DATE
 );
-INSERT INTO `usuarios` (`usuario`, `clave`, `perfil`) VALUES ('root','1234', 'admin');
+INSERT INTO `usuarios` (`usuario`, `clave`, `correo`, `perfil`, `estado`, `numeroAccesosErroneo`) VALUES ('root','$2b$10$sozxaYjTxhYBkw3GK/7J8uC1B7SKTsso3hJPItKWICzfwWYke.6s.', 'root@example.com', 'admin', 'activo', 0);

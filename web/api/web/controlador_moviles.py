@@ -1,5 +1,5 @@
 from bd import obtener_conexion
-import sys
+from funciones_auxiliares import sanitize_field
 
 
 def convertir_movil_a_json(movil):
@@ -9,7 +9,7 @@ def convertir_movil_a_json(movil):
     d['descripcion'] = movil[2]
     d['precio'] = float(movil[3])
     d['foto'] = movil[4]
-    d['ingredientes']=movil[5]
+    d['ingredientes'] = movil[5]
     return d
 
 def insertar_movil(nombre, descripcion, precio,foto,ingredientes):

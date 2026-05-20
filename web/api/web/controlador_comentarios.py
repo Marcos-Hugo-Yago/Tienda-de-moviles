@@ -1,6 +1,5 @@
 from bd import obtener_conexion
-import sys
-import datetime as dt
+from funciones_auxiliares import sanitize_field
 
 
 def convertir_comentario_a_json(comentario):

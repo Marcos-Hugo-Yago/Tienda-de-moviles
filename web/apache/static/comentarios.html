@@ -14,6 +14,17 @@
     <script>
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
+
+        function getCookie(name) {
+            var value = "; " + document.cookie;
+            var parts = value.split("; " + name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        }
+        var csrfToken = getCookie("csrf_token");
+        if (csrfToken) {
+            myHeaders.append("X-CSRFToken", csrfToken);
+        }
+
         onload = function () {
             pedirComentarios();
         }
@@ -120,12 +131,12 @@
                     <input required type="text" placeholder="Escribe tu opinión..." name="descripcion" id="descripcion">
                 </div>
                 <div class="field" style="text-align: center; margin-top: 20px;">
-                    <button type="button" onclick="guardarComentario()" class="button is-success">Guardar
-                        Comentario</button>
+                    <button type="button" onclick="guardarComentario()" class="button is-success">Enviar</button>
                 </div>
             </form>
         </div>
     </div>
+
 </body>
 
 </html>

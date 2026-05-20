@@ -30,6 +30,11 @@ services:
     restart: unless-stopped
     env_file:
       - ./credenciales
+    environment:
+      - PASSWORD_PEPPER=pimientaSecreta123
+      - SECRET_KEY=claveSuperSecretaParaSesiones
+    volumes:
+      - ./logs:/app/logs
     depends_on:
       - mariadb
     networks:

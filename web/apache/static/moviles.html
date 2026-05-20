@@ -13,6 +13,16 @@
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
+        function getCookie(name) {
+            var value = "; " + document.cookie;
+            var parts = value.split("; " + name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        }
+        var csrfToken = getCookie("csrf_token");
+        if (csrfToken) {
+            myHeaders.append("X-CSRFToken", csrfToken);
+        }
+
         onload = function () {
             pedirMoviles();
         }
@@ -62,7 +72,6 @@
                 .then(response => response.json())
                 .then(result => {
                     if (result.status == "OK") {
-                        // alert("Móvil eliminado");
                         pedirMoviles();
                     } else {
                         alert("El móvil no ha podido ser eliminado");

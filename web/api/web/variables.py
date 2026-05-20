@@ -7,3 +7,5 @@ def cargarvariables():
     os.environ['DB_PORT']='3306'
     os.environ['PORT']='8080'
     os.environ['HOST']='0.0.0.0'
+    os.environ['PASSWORD_PEPPER']='pimientaSecreta123'
+    os.environ['SECRET_KEY']='claveSuperSecretaParaSesiones'
