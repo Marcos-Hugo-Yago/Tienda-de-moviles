@@ -1,12 +1,12 @@
 from bd import obtener_conexion
-from funciones_auxiliares import sanitize_field
+from html import escape
 
 
 def convertir_comentario_a_json(comentario):
     d = {}
     d['id'] = comentario[0]
-    d['usuario'] = comentario[1]
-    d['descripcion'] = comentario[2]
+    d['usuario'] = escape(comentario[1])
+    d['descripcion'] = escape(comentario[2])
     return d
 
 def insertar_comentario(usuario, descripcion):
@@ -18,10 +18,10 @@ def insertar_comentario(usuario, descripcion):
         conexion.close()
         ret={"status": "OK" }
         code=200
-    except:
+    except Exception as e:
+        print(f"Excepcion al insertar un comentario: {e}", flush=True)
         ret={"status": "ERROR" }
-        print("Excepcion al insertar un comentario", flush=True)
-        code=500   
+        code=500
     return ret,code
 
 def obtener_comentarios():
@@ -36,7 +36,7 @@ def obtener_comentarios():
                     comentariosjson.append(convertir_comentario_a_json(comentario))
         conexion.close()
         code=200
-    except:
-        print("Excepcion al consultar todas los comentarios", flush=True)
+    except Exception as e:
+        print(f"Excepcion al consultar todos los comentarios: {e}", flush=True)
         code=500
     return comentariosjson,code

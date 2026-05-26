@@ -64,7 +64,7 @@ def create_app():
 
     @app.before_request
     def clean_request():
-        if request.is_json:
+        if request.is_json and not request.path.startswith("/api/comentarios/"):
             data = request.get_json(silent=True)
             if data is not None:
                 request._cached_json = (sanitize_field(data), False)

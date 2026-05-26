@@ -545,3 +545,227 @@
 [2026-05-20 12:04:16,058] INFO in _internal: 172.18.0.3 - - [20/May/2026 12:04:16] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
 [2026-05-20 12:04:34,678] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 270 >>> 172.18.0.3
 [2026-05-20 12:04:34,678] INFO in _internal: 172.18.0.3 - - [20/May/2026 12:04:34] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-20 12:05:30,313] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 270 >>> 172.18.0.3
+[2026-05-20 12:05:30,313] INFO in _internal: 172.18.0.3 - - [20/May/2026 12:05:30] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-20 12:05:32,025] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 270 >>> 172.18.0.3
+[2026-05-20 12:05:32,025] INFO in _internal: 172.18.0.3 - - [20/May/2026 12:05:32] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-20 12:05:36,182] INFO in app: path: /api/Moviles/14 | method: GET | status: 200 OK | size: 268 >>> 172.18.0.3
+[2026-05-20 12:05:36,183] INFO in _internal: 172.18.0.3 - - [20/May/2026 12:05:36] "[37mGET /api/Moviles/14 HTTP/1.1[0m" 200 -
+[2026-05-20 12:05:41,884] INFO in app: path: /api/Moviles/ | method: PUT | status: 200 OK | size: 16 >>> 172.18.0.3
+[2026-05-20 12:05:41,885] INFO in _internal: 172.18.0.3 - - [20/May/2026 12:05:41] "[37mPUT /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-20 12:05:42,954] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 271 >>> 172.18.0.3
+[2026-05-20 12:05:42,954] INFO in _internal: 172.18.0.3 - - [20/May/2026 12:05:42] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-20 12:06:18,457] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 271 >>> 172.18.0.3
+[2026-05-20 12:06:18,457] INFO in _internal: 172.18.0.3 - - [20/May/2026 12:06:18] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-21 08:20:38,607] INFO in _internal:  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+[2026-05-21 08:20:38,608] INFO in _internal:  * Restarting with stat
+[2026-05-21 08:20:38,693] WARNING in _internal:  * Debugger is active!
+[2026-05-21 08:20:38,695] INFO in _internal:  * Debugger PIN: 161-108-678
+[2026-05-25 08:21:17,645] INFO in _internal:  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+[2026-05-25 08:21:17,646] INFO in _internal:  * Restarting with stat
+[2026-05-25 08:21:17,732] WARNING in _internal:  * Debugger is active!
+[2026-05-25 08:21:17,734] INFO in _internal:  * Debugger PIN: 253-235-218
+[2026-05-26 09:41:58,708] INFO in _internal:  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+[2026-05-26 09:41:58,709] INFO in _internal:  * Restarting with stat
+[2026-05-26 09:41:58,793] WARNING in _internal:  * Debugger is active!
+[2026-05-26 09:41:58,795] INFO in _internal:  * Debugger PIN: 481-641-853
+[2026-05-26 10:29:37,466] INFO in app: path: /api/Moviles/ | method: GET | status: 403 FORBIDDEN | size: 23 >>> 172.18.0.2
+[2026-05-26 10:29:37,466] INFO in _internal: 172.18.0.2 - - [26/May/2026 10:29:37] "[31m[1mGET /api/Moviles/ HTTP/1.1[0m" 403 -
+[2026-05-26 10:29:41,890] INFO in app: path: /api/Moviles/ | method: GET | status: 403 FORBIDDEN | size: 23 >>> 172.18.0.2
+[2026-05-26 10:29:41,891] INFO in _internal: 172.18.0.2 - - [26/May/2026 10:29:41] "[31m[1mGET /api/Moviles/ HTTP/1.1[0m" 403 -
+[2026-05-26 10:29:45,258] INFO in app: path: /api/usuarios/logout | method: GET | status: 200 OK | size: 16 >>> 172.18.0.2
+[2026-05-26 10:29:45,259] INFO in _internal: 172.18.0.2 - - [26/May/2026 10:29:45] "[37mGET /api/usuarios/logout HTTP/1.1[0m" 200 -
+[2026-05-26 10:29:46,715] INFO in controlador_usuarios: Acceso usuario root correcto
+[2026-05-26 10:29:46,717] INFO in app: path: /api/usuarios/login | method: POST | status: 200 OK | size: 144 >>> 172.18.0.2
+[2026-05-26 10:29:46,718] INFO in _internal: 172.18.0.2 - - [26/May/2026 10:29:46] "[37mPOST /api/usuarios/login HTTP/1.1[0m" 200 -
+[2026-05-26 10:29:46,743] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 271 >>> 172.18.0.2
+[2026-05-26 10:29:46,744] INFO in _internal: 172.18.0.2 - - [26/May/2026 10:29:46] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:35:18,462] INFO in _internal:  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+[2026-05-26 10:35:18,462] INFO in _internal:  * Restarting with stat
+[2026-05-26 10:35:18,574] WARNING in _internal:  * Debugger is active!
+[2026-05-26 10:35:18,574] INFO in _internal:  * Debugger PIN: 737-901-199
+[2026-05-26 10:35:24,785] INFO in app: path: /api/ficheros/ | method: POST | status: 400 BAD REQUEST | size: 142 >>> 172.19.0.3
+[2026-05-26 10:35:24,785] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:35:24] "[31m[1mPOST /api/ficheros/ HTTP/1.1[0m" 400 -
+[2026-05-26 10:35:27,353] INFO in app: path: /api/usuarios/login | method: POST | status: 401 UNAUTHORIZED | size: 25 >>> 172.19.0.3
+[2026-05-26 10:35:27,354] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:35:27] "[31m[1mPOST /api/usuarios/login HTTP/1.1[0m" 401 -
+[2026-05-26 10:35:31,954] INFO in app: path: /api/usuarios/login | method: POST | status: 200 OK | size: 55 >>> 172.19.0.3
+[2026-05-26 10:35:31,955] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:35:31] "[37mPOST /api/usuarios/login HTTP/1.1[0m" 200 -
+[2026-05-26 10:35:34,730] INFO in controlador_usuarios: Nuevo usuario creado
+[2026-05-26 10:35:34,730] INFO in app: path: /api/usuarios/registro | method: POST | status: 200 OK | size: 16 >>> 172.19.0.3
+[2026-05-26 10:35:34,730] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:35:34] "[37mPOST /api/usuarios/registro HTTP/1.1[0m" 200 -
+[2026-05-26 10:35:37,423] INFO in controlador_usuarios: Acceso usuario testuser correcto
+[2026-05-26 10:35:37,432] INFO in app: path: /api/usuarios/login | method: POST | status: 200 OK | size: 145 >>> 172.19.0.3
+[2026-05-26 10:35:37,433] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:35:37] "[37mPOST /api/usuarios/login HTTP/1.1[0m" 200 -
+[2026-05-26 10:35:40,419] INFO in app: path: /api/ficheros/ | method: POST | status: 200 OK | size: 73 >>> 172.19.0.3
+[2026-05-26 10:35:40,419] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:35:40] "[37mPOST /api/ficheros/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:35:44,484] INFO in app: path: /api/ficheros/ | method: POST | status: 400 BAD REQUEST | size: 42 >>> 172.19.0.3
+[2026-05-26 10:35:44,485] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:35:44] "[31m[1mPOST /api/ficheros/ HTTP/1.1[0m" 400 -
+[2026-05-26 10:35:44,496] INFO in app: path: /api/ficheros/71799aa507bf46d1b5189c41a564b9b3_test.txt | method: GET | status: 200 OK | size: 66 >>> 172.19.0.3
+[2026-05-26 10:35:44,496] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:35:44] "[37mGET /api/ficheros/71799aa507bf46d1b5189c41a564b9b3_test.txt HTTP/1.1[0m" 200 -
+[2026-05-26 10:35:49,195] INFO in app: path: /api/ficheros/ | method: POST | status: 200 OK | size: 77 >>> 172.19.0.3
+[2026-05-26 10:35:49,196] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:35:49] "[37mPOST /api/ficheros/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:35:49,223] INFO in app: path: /api/ficheros/e97010d0c69d4d48bb9daaf6cc4b2498_xss_test.txt | method: GET | status: 200 OK | size: 70 >>> 172.19.0.3
+[2026-05-26 10:35:49,224] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:35:49] "[37mGET /api/ficheros/e97010d0c69d4d48bb9daaf6cc4b2498_xss_test.txt HTTP/1.1[0m" 200 -
+[2026-05-26 10:35:53,759] INFO in app: path: /api/ficheros/ | method: POST | status: 400 BAD REQUEST | size: 50 >>> 172.19.0.3
+[2026-05-26 10:35:53,759] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:35:53] "[31m[1mPOST /api/ficheros/ HTTP/1.1[0m" 400 -
+[2026-05-26 10:35:53,802] INFO in app: path: /api/ficheros/ | method: POST | status: 400 BAD REQUEST | size: 42 >>> 172.19.0.3
+[2026-05-26 10:35:53,804] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:35:53] "[31m[1mPOST /api/ficheros/ HTTP/1.1[0m" 400 -
+[2026-05-26 10:35:53,818] INFO in app: path: /api/ficheros/noexiste.txt | method: GET | status: 404 NOT FOUND | size: 38 >>> 172.19.0.3
+[2026-05-26 10:35:53,818] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:35:53] "[33mGET /api/ficheros/noexiste.txt HTTP/1.1[0m" 404 -
+[2026-05-26 10:35:57,770] INFO in app: path: /api/ficheros/ | method: POST | status: 400 BAD REQUEST | size: 66 >>> 172.19.0.3
+[2026-05-26 10:35:57,771] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:35:57] "[31m[1mPOST /api/ficheros/ HTTP/1.1[0m" 400 -
+[2026-05-26 10:36:54,607] INFO in app: path: /api/ficheros/ | method: POST | status: 400 BAD REQUEST | size: 42 >>> 172.19.0.3
+[2026-05-26 10:36:54,607] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:36:54] "[31m[1mPOST /api/ficheros/ HTTP/1.1[0m" 400 -
+[2026-05-26 10:37:15,914] INFO in app: path: /api/ficheros/ | method: POST | status: 400 BAD REQUEST | size: 42 >>> 172.19.0.3
+[2026-05-26 10:37:15,914] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:37:15] "[31m[1mPOST /api/ficheros/ HTTP/1.1[0m" 400 -
+[2026-05-26 10:37:36,427] INFO in controlador_usuarios: Acceso usuario root correcto
+[2026-05-26 10:37:36,428] INFO in app: path: /api/usuarios/login | method: POST | status: 200 OK | size: 144 >>> 172.19.0.3
+[2026-05-26 10:37:36,428] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:37:36] "[37mPOST /api/usuarios/login HTTP/1.1[0m" 200 -
+[2026-05-26 10:37:36,451] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 271 >>> 172.19.0.3
+[2026-05-26 10:37:36,451] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:37:36] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:37:46,826] INFO in app: path: /api/ficheros/ | method: POST | status: 200 OK | size: 75 >>> 172.19.0.3
+[2026-05-26 10:37:46,826] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:37:46] "[37mPOST /api/ficheros/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:37:54,735] INFO in app: path: /api/ficheros/prueba | method: GET | status: 404 NOT FOUND | size: 38 >>> 172.19.0.3
+[2026-05-26 10:37:54,735] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:37:54] "[33mGET /api/ficheros/prueba HTTP/1.1[0m" 404 -
+[2026-05-26 10:38:21,164] INFO in app: path: /api/ficheros/ | method: POST | status: 400 BAD REQUEST | size: 42 >>> 172.19.0.3
+[2026-05-26 10:38:21,164] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:38:21] "[31m[1mPOST /api/ficheros/ HTTP/1.1[0m" 400 -
+[2026-05-26 10:38:25,964] INFO in app: path: /api/ficheros/ | method: POST | status: 200 OK | size: 76 >>> 172.19.0.3
+[2026-05-26 10:38:25,966] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:38:25] "[37mPOST /api/ficheros/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:38:32,583] INFO in app: path: /api/ficheros/df1ea89c3e9b4cc5a947a9dcce36eacc_prueba2.png | method: GET | status: 200 OK | size: 49 >>> 172.19.0.3
+[2026-05-26 10:38:32,584] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:38:32] "[37mGET /api/ficheros/df1ea89c3e9b4cc5a947a9dcce36eacc_prueba2.png HTTP/1.1[0m" 200 -
+[2026-05-26 10:41:09,961] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 271 >>> 172.19.0.3
+[2026-05-26 10:41:09,961] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:41:09] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:41:11,862] INFO in app: path: /api/usuarios/logout | method: GET | status: 200 OK | size: 16 >>> 172.19.0.3
+[2026-05-26 10:41:11,862] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:41:11] "[37mGET /api/usuarios/logout HTTP/1.1[0m" 200 -
+[2026-05-26 10:41:12,949] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:41:12,949] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:41:12] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:41:58,424] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:41:58,424] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:41:58] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:41:59,090] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:41:59,090] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:41:59] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:41:59,321] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:41:59,321] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:41:59] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:03,732] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:42:03,732] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:03] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:04,213] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:42:04,213] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:04] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:04,386] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:42:04,386] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:04] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:18,224] INFO in controlador_usuarios: Acceso usuario root correcto
+[2026-05-26 10:42:18,225] INFO in app: path: /api/usuarios/login | method: POST | status: 200 OK | size: 144 >>> 172.19.0.3
+[2026-05-26 10:42:18,226] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:18] "[37mPOST /api/usuarios/login HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:18,250] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 271 >>> 172.19.0.3
+[2026-05-26 10:42:18,250] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:18] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:20,130] INFO in app: path: /api/usuarios/logout | method: GET | status: 200 OK | size: 16 >>> 172.19.0.3
+[2026-05-26 10:42:20,130] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:20] "[37mGET /api/usuarios/logout HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:21,802] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:42:21,802] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:21] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:28,846] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:42:28,846] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:28] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:29,694] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:42:29,694] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:29] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:29,938] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:42:29,938] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:29] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:30,141] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:42:30,142] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:30] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:30,536] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:42:30,537] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:30] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:30,743] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:42:30,743] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:30] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:30,949] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:42:30,949] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:30] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:32,873] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 112 >>> 172.19.0.3
+[2026-05-26 10:42:32,874] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:32] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:42:58,792] INFO in controlador_usuarios: Acceso usuario root incorrecto
+[2026-05-26 10:42:58,798] INFO in app: path: /api/usuarios/login | method: POST | status: 200 OK | size: 55 >>> 172.19.0.3
+[2026-05-26 10:42:58,798] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:42:58] "[37mPOST /api/usuarios/login HTTP/1.1[0m" 200 -
+[2026-05-26 10:43:00,855] INFO in controlador_usuarios: Acceso usuario root correcto
+[2026-05-26 10:43:00,857] INFO in app: path: /api/usuarios/login | method: POST | status: 200 OK | size: 144 >>> 172.19.0.3
+[2026-05-26 10:43:00,857] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:43:00] "[37mPOST /api/usuarios/login HTTP/1.1[0m" 200 -
+[2026-05-26 10:43:00,887] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 271 >>> 172.19.0.3
+[2026-05-26 10:43:00,887] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:43:00] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:43:05,433] INFO in app: path: /api/Moviles/14 | method: GET | status: 200 OK | size: 269 >>> 172.19.0.3
+[2026-05-26 10:43:05,433] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:43:05] "[37mGET /api/Moviles/14 HTTP/1.1[0m" 200 -
+[2026-05-26 10:43:18,939] INFO in app: path: /api/Moviles/ | method: PUT | status: 200 OK | size: 16 >>> 172.19.0.3
+[2026-05-26 10:43:18,940] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:43:18] "[37mPUT /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:43:19,924] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 270 >>> 172.19.0.3
+[2026-05-26 10:43:19,924] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:43:19] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:43:22,087] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 270 >>> 172.19.0.3
+[2026-05-26 10:43:22,087] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:43:22] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:43:58,536] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 270 >>> 172.19.0.3
+[2026-05-26 10:43:58,536] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:43:58] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:44:34,747] INFO in app: path: /api/Moviles/ | method: GET | status: 403 FORBIDDEN | size: 23 >>> 172.19.0.3
+[2026-05-26 10:44:34,747] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:44:34] "[31m[1mGET /api/Moviles/ HTTP/1.1[0m" 403 -
+[2026-05-26 10:44:42,328] INFO in app: path: /api/usuarios/logout | method: GET | status: 200 OK | size: 16 >>> 172.19.0.3
+[2026-05-26 10:44:42,328] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:44:42] "[37mGET /api/usuarios/logout HTTP/1.1[0m" 200 -
+[2026-05-26 10:44:48,704] INFO in controlador_usuarios: Acceso usuario root correcto
+[2026-05-26 10:44:48,704] INFO in app: path: /api/usuarios/login | method: POST | status: 200 OK | size: 144 >>> 172.19.0.3
+[2026-05-26 10:44:48,705] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:44:48] "[37mPOST /api/usuarios/login HTTP/1.1[0m" 200 -
+[2026-05-26 10:44:48,797] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 270 >>> 172.19.0.3
+[2026-05-26 10:44:48,797] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:44:48] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:47:03,309] INFO in app: path: /api/comentarios/ | method: POST | status: 200 OK | size: 16 >>> 172.19.0.3
+[2026-05-26 10:47:03,309] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:47:03] "[37mPOST /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:47:42,351] INFO in controlador_usuarios: Nuevo usuario creado
+[2026-05-26 10:47:42,351] INFO in app: path: /api/usuarios/registro | method: POST | status: 200 OK | size: 16 >>> 172.19.0.3
+[2026-05-26 10:47:42,351] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:47:42] "[37mPOST /api/usuarios/registro HTTP/1.1[0m" 200 -
+[2026-05-26 10:47:42,413] INFO in controlador_usuarios: Acceso usuario coment_user correcto
+[2026-05-26 10:47:42,456] INFO in app: path: /api/usuarios/login | method: POST | status: 200 OK | size: 145 >>> 172.19.0.3
+[2026-05-26 10:47:42,456] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:47:42] "[37mPOST /api/usuarios/login HTTP/1.1[0m" 200 -
+[2026-05-26 10:47:42,470] INFO in app: path: /api/comentarios/ | method: POST | status: 200 OK | size: 16 >>> 172.19.0.3
+[2026-05-26 10:47:42,470] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:47:42] "[37mPOST /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:47:42,481] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 249 >>> 172.19.0.3
+[2026-05-26 10:47:42,481] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:47:42] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:48:27,660] INFO in _internal:  * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+[2026-05-26 10:48:27,660] INFO in _internal:  * Restarting with stat
+[2026-05-26 10:48:27,763] WARNING in _internal:  * Debugger is active!
+[2026-05-26 10:48:27,764] INFO in _internal:  * Debugger PIN: 870-864-391
+[2026-05-26 10:48:31,506] INFO in controlador_usuarios: Acceso usuario coment_user correcto
+[2026-05-26 10:48:31,507] INFO in app: path: /api/usuarios/login | method: POST | status: 200 OK | size: 145 >>> 172.19.0.3
+[2026-05-26 10:48:31,508] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:48:31] "[37mPOST /api/usuarios/login HTTP/1.1[0m" 200 -
+[2026-05-26 10:48:31,529] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 249 >>> 172.19.0.3
+[2026-05-26 10:48:31,530] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:48:31] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:48:35,220] INFO in app: path: /api/comentarios/ | method: POST | status: 200 OK | size: 16 >>> 172.19.0.3
+[2026-05-26 10:48:35,220] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:48:35] "[37mPOST /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:48:35,235] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 340 >>> 172.19.0.3
+[2026-05-26 10:48:35,235] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:48:35] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:48:39,366] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 340 >>> 172.19.0.3
+[2026-05-26 10:48:39,367] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:48:39] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:48:43,377] INFO in app: path: /api/comentarios/ | method: POST | status: 200 OK | size: 16 >>> 172.19.0.3
+[2026-05-26 10:48:43,377] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:48:43] "[37mPOST /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:48:43,391] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 445 >>> 172.19.0.3
+[2026-05-26 10:48:43,392] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:48:43] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:49:37,739] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 270 >>> 172.19.0.3
+[2026-05-26 10:49:37,739] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:49:37] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:49:39,175] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 270 >>> 172.19.0.3
+[2026-05-26 10:49:39,175] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:49:39] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:49:39,588] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 270 >>> 172.19.0.3
+[2026-05-26 10:49:39,588] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:49:39] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:49:48,023] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 270 >>> 172.19.0.3
+[2026-05-26 10:49:48,023] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:49:48] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:49:48,568] INFO in app: path: /api/usuarios/logout | method: GET | status: 200 OK | size: 16 >>> 172.19.0.3
+[2026-05-26 10:49:48,568] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:49:48] "[37mGET /api/usuarios/logout HTTP/1.1[0m" 200 -
+[2026-05-26 10:49:49,540] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 445 >>> 172.19.0.3
+[2026-05-26 10:49:49,540] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:49:49] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:50:33,095] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 445 >>> 172.19.0.3
+[2026-05-26 10:50:33,095] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:50:33] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:50:39,997] INFO in app: path: /api/comentarios/ | method: POST | status: 200 OK | size: 16 >>> 172.19.0.3
+[2026-05-26 10:50:39,998] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:50:39] "[37mPOST /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:50:41,442] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 498 >>> 172.19.0.3
+[2026-05-26 10:50:41,443] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:50:41] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:51:09,706] INFO in app: path: /api/comentarios/ | method: POST | status: 200 OK | size: 16 >>> 172.19.0.3
+[2026-05-26 10:51:09,706] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:51:09] "[37mPOST /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 10:51:10,661] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 554 >>> 172.19.0.3
+[2026-05-26 10:51:10,661] INFO in _internal: 172.19.0.3 - - [26/May/2026 10:51:10] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 11:29:20,170] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 554 >>> 172.19.0.3
+[2026-05-26 11:29:20,171] INFO in _internal: 172.19.0.3 - - [26/May/2026 11:29:20] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 11:29:20,622] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 554 >>> 172.19.0.3
+[2026-05-26 11:29:20,622] INFO in _internal: 172.19.0.3 - - [26/May/2026 11:29:20] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 11:29:20,851] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 554 >>> 172.19.0.3
+[2026-05-26 11:29:20,852] INFO in _internal: 172.19.0.3 - - [26/May/2026 11:29:20] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 11:29:21,069] INFO in app: path: /api/comentarios/ | method: GET | status: 200 OK | size: 554 >>> 172.19.0.3
+[2026-05-26 11:29:21,070] INFO in _internal: 172.19.0.3 - - [26/May/2026 11:29:21] "[37mGET /api/comentarios/ HTTP/1.1[0m" 200 -
+[2026-05-26 11:41:37,261] INFO in controlador_usuarios: Acceso usuario root correcto
+[2026-05-26 11:41:37,262] INFO in app: path: /api/usuarios/login | method: POST | status: 200 OK | size: 144 >>> 172.19.0.3
+[2026-05-26 11:41:37,262] INFO in _internal: 172.19.0.3 - - [26/May/2026 11:41:37] "[37mPOST /api/usuarios/login HTTP/1.1[0m" 200 -
+[2026-05-26 11:41:37,289] INFO in app: path: /api/Moviles/ | method: GET | status: 200 OK | size: 270 >>> 172.19.0.3
+[2026-05-26 11:41:37,289] INFO in _internal: 172.19.0.3 - - [26/May/2026 11:41:37] "[37mGET /api/Moviles/ HTTP/1.1[0m" 200 -

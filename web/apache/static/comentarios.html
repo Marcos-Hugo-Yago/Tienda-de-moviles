@@ -56,14 +56,17 @@
         }
         function pintarComentarios(lista) {
             let tbody = document.getElementsByTagName("tbody")[0];
-            tbody.innerText = "";
+            tbody.innerHTML = "";
 
             lista.forEach(comentario => {
-                let texto = `<tr>
-                        <td>${comentario.usuario}</td>
-                        <td>${comentario.descripcion}</td>
-                        </tr>`;
-                tbody.innerHTML += texto
+                let tr = document.createElement("tr");
+                let td1 = document.createElement("td");
+                td1.textContent = comentario.usuario;
+                let td2 = document.createElement("td");
+                td2.textContent = comentario.descripcion;
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tbody.appendChild(tr);
             });
         }
         function pedirComentarios() {

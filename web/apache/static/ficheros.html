@@ -25,13 +25,40 @@
             myHeaders.append("X-CSRFToken", csrfToken);
         }
 
+        var allowedExtensions = ['txt', 'pdf', 'jpg', 'jpeg', 'png', 'gif', 'bmp', 'doc', 'docx', 'xls', 'xlsx', 'csv', 'md', 'log'];
+        var maxFileSize = 5 * 1024 * 1024; // 5 MB
+
         function enviarArchivo() {
+            var fileInput = document.getElementById("fichero");
+            var file = fileInput.files[0];
+
+            if (!file) {
+                alert("Selecciona un archivo primero");
+                return;
+            }
+
+            var ext = file.name.split('.').pop().toLowerCase();
+            if (!allowedExtensions.includes(ext)) {
+                alert("Tipo de archivo no permitido. Extensiones aceptadas: " + allowedExtensions.join(', '));
+                return;
+            }
+
+            if (file.size > maxFileSize) {
+                alert("El archivo excede el tamaño máximo de 5 MB");
+                return;
+            }
+
+            var uploadHeaders = new Headers();
+            if (csrfToken) {
+                uploadHeaders.append("X-CSRFToken", csrfToken);
+            }
+
             const formData = new FormData();
-            formData.append('fichero', document.getElementById("fichero").files[0]);
+            formData.append('fichero', file);
             formData.append('nombre', document.getElementById("nombre").value);
             var requestOptions = {
                 method: 'POST',
-                headers: myHeaders,
+                headers: uploadHeaders,
                 body: formData
             };
 
@@ -39,11 +66,11 @@
                 .then(response => response.json())
                 .then(result => {
                     if (result.status == "OK") {
-                        alert("Archivo subido correctamente");
+                        alert("Archivo subido correctamente como: " + result.filename);
                         document.getElementById("nombre").value = "";
                         document.getElementById("fichero").value = "";
                     } else {
-                        alert("El archivo no ha podido subirse");
+                        alert("Error: " + (result.status || "El archivo no ha podido subirse"));
                     }
                 })
                 .catch(error => {
